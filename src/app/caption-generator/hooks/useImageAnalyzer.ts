@@ -1,6 +1,7 @@
 // hooks/useImageAnalyzer.ts
 import { useState } from "react";
 import { analyzeImage } from "../utils/analyzeImage";
+import Error from "next/error";
 
 const useImageAnalyzer = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -28,8 +29,8 @@ const useImageAnalyzer = () => {
     try {
       const result = await analyzeImage(selectedFile, captionLength, language, customPromptEnabled, customPrompt);
       setOutput(result);
-    } catch (error) {
-      setOutput(`Error: ${error.message}`);
+    } catch (error ) {
+      setOutput(`Error: ${error}`);
     } finally {
       setLoading(false);
     }
