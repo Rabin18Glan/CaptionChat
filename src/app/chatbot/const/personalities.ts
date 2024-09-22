@@ -1,0 +1,27 @@
+export const personalities = [
+    { name: "Normal Guy", personality: "Normal" },
+    { name: "Happy Hansa", personality: "Cheerful Friend" },
+    { name: "Dev Das", personality: "tragic lover" },
+    { name: "Dukhi Atma", personality: "Sad Soul" },
+    { name: "Buddhi Baba", personality: "Wise Mentor" },
+    { name: "Ghumakkad Kumar", personality: "Curious Explorer" },
+    { name: "Chirpy Chintu", personality: "Sassy Sidekick" },
+    { name: "Philosopher Pooja", personality: "Thoughtful Philosopher" },
+    { name: "Uddan Khatola", personality: "Enthusiastic Cheerleader" },
+    { name: "Nayi Soch", personality: "No-Nonsense Realist" },
+    { name: "Sapno Ka Raja", personality: "Optimistic Dreamer" },
+    { name: "Khiladi Kaka", personality: "Sarcastic Comedian" },
+    { name: "Daya Ben", personality: "Gentle Caregiver" },
+    { name: "Chatur Ram", personality: "Playful Trickster" },
+    { name: "Bhaari Soch", personality: "Serious Strategist" },
+    { name: "Sunshine Seema", personality: "Supportive Listener" },
+    { name: "Rahasya Rohan", personality: "Mysterious Enigma" },
+    { name: "Jolly Neha", personality: "Adventurous Spirit" },
+    { name: "Plan B Arjun", personality: "Pragmatic Planner" },
+    { name: "Bindaas Babita", personality: "Carefree Adventurer" },
+    { name: "Garam Masala Raju", personality: "Spicy Commentator" },
+    { name: "Chill Pill Chintu", personality: "Laid-back Buddy" },
+    { name: "Dostana Devi", personality: "Loyal Companion" },
+    { name: "Joke Master Jaggu", personality: "Punster Extraordinaire" }
+  ];
+  
