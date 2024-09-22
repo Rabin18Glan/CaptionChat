@@ -1,9 +1,16 @@
 import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from '@google/generative-ai';
 import { NextRequest, NextResponse } from 'next/server';
 
+// Define the expected structure of the request body
+interface RequestBody {
+  imageBase64: string;
+  promptText: string;
+  fileType: string;
+}
+
 export async function POST(req: NextRequest) {
   const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-  const { imageBase64, promptText, fileType } = await req.json();
+  const { imageBase64, promptText, fileType }: RequestBody = await req.json();
 
   if (!GEMINI_API_KEY) {
     return NextResponse.json({ error: 'API key not found' }, { status: 500 });
@@ -33,13 +40,13 @@ export async function POST(req: NextRequest) {
 
     const result = await model.generateContentStream({ contents });
     let caption = '';
-    for await (let response of result.stream) {
-      caption += response.text();
+    for await (const response of result.stream) { // Use const here
+      caption += await response.text(); // Await the response text
     }
 
     return NextResponse.json({ caption });
   } catch (error) {
     console.error('Error:', error);
-    return NextResponse.json({ error: 'Error analyzing image' }, { status: 500 });
+    return NextResponse.json({ error: 'Error analyzing image', details: error.message }, { status: 500 });
   }
 }

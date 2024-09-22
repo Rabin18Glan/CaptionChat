@@ -1,6 +1,6 @@
 
 import SideNavigation from '@/components/SideNavigation/SideNavigation';
-import React, { useState } from 'react';
+import React from 'react';
 
 
 const Root = ({ children }:{children:React.ReactNode}) => {
