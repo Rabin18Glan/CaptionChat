@@ -25,7 +25,7 @@ export const useGeminiAI = () => {
 
     try {
       // Calling the Next.js server-side API route
-      const res = await fetch('http://localhost:3000/api/gemini/chat', {
+      const res = await fetch('/api/gemini/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
