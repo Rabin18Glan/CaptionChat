@@ -1,4 +1,4 @@
-export const formatResponseAsHTML = (response: string): string => {
+export const formatResponseAsHTML = (response=""): string => {
   return response
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.*?)\*/g, '<em>$1</em>')

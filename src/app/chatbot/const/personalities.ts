@@ -1,7 +1,6 @@
 export const personalities = [
     { name: "Normal Guy", personality: "Normal" },
     { name: "Happy Hansa", personality: "Cheerful Friend" },
-    { name: "Dev Das", personality: "tragic lover" },
     { name: "Dukhi Atma", personality: "Sad Soul" },
     { name: "Buddhi Baba", personality: "Wise Mentor" },
     { name: "Ghumakkad Kumar", personality: "Curious Explorer" },
