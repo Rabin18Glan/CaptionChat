@@ -2,7 +2,7 @@ import { popularLanguages } from '@/const/languages';
 import React from 'react';
 
 // Types
-type CaptionLength = 'short' | 'medium' | 'long';
+export type CaptionLength = 'short' | 'medium' | 'long';
 
 interface CaptionOptionsProps {
   captionLength: CaptionLength;

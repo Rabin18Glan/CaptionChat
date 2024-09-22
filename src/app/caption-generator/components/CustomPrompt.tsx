@@ -1,5 +1,4 @@
-// components/CustomPrompt.tsx
-import React from "react";
+import React from 'react';
 
 interface CustomPromptProps {
   customPrompt: string;
@@ -13,30 +12,47 @@ const CustomPrompt: React.FC<CustomPromptProps> = ({
   setCustomPrompt,
   customPromptEnabled,
   setCustomPromptEnabled,
-}) => (
-  <div className="mb-4 flex items-center">
-    <input
-      type="checkbox"
-      checked={customPromptEnabled}
-      onChange={() => setCustomPromptEnabled(!customPromptEnabled)}
-      className="mr-2"
-    />
-    <label className="text-sm font-medium text-gray-700">Use Custom Prompt</label>
+}) => {
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCustomPromptEnabled(event.target.checked);
+  };
 
-    {customPromptEnabled && (
-      <div className="mb-4 w-full">
-        <label className="block mb-2 text-sm font-medium text-gray-700">
-          Custom Prompt:
-          <textarea
-            value={customPrompt}
-            onChange={(e) => setCustomPrompt(e.target.value)}
-            className="mt-1 p-5 block w-full text-sm text-gray-500 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-200"
-            rows={3}
-          />
+  const handleTextareaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setCustomPrompt(event.target.value);
+  };
+
+  return (
+    <div className="mb-4">
+      <div className="flex items-center mb-2">
+        <input
+          type="checkbox"
+          id="useCustomPrompt"
+          checked={customPromptEnabled}
+          onChange={handleCheckboxChange}
+          className="mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+        />
+        <label htmlFor="useCustomPrompt" className="text-sm font-medium text-gray-700">
+          Use Custom Prompt
         </label>
       </div>
-    )}
-  </div>
-);
+
+      {customPromptEnabled && (
+        <div className="mt-2">
+          <label htmlFor="customPromptText" className="block mb-1 text-sm font-medium text-gray-700">
+            Custom Prompt:
+          </label>
+          <textarea
+            id="customPromptText"
+            value={customPrompt}
+            onChange={handleTextareaChange}
+            className="w-full p-2 text-sm text-gray-700 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            rows={3}
+            placeholder="Enter your custom prompt here..."
+          />
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default CustomPrompt;

@@ -1,11 +1,11 @@
 // hooks/useImageAnalyzer.ts
 import { useState } from "react";
+import { CaptionLength } from "../components/CaptionOptions";
 import { analyzeImage } from "../utils/analyzeImage";
-import Error from "next/error";
 
 const useImageAnalyzer = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [captionLength, setCaptionLength] = useState<string>("medium");
+  const [captionLength, setCaptionLength] = useState<CaptionLength>("medium");
   const [language, setLanguage] = useState<string>("en");
   const [output, setOutput] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
