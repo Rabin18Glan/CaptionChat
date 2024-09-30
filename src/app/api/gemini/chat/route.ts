@@ -1,23 +1,20 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { ChatBot } from '@/AIModels/GeminiGenerativeModel';
 import { NextRequest, NextResponse } from 'next/server';
+import { generateReply } from './utils/generateReply';
 
 export async function POST(req: NextRequest) {
   const { promptText } = await req.json();
-  const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-
-  if (!GEMINI_API_KEY) {
-    return NextResponse.json({ error: 'API key not found' }, { status: 500 });
-  }
-
   try {
-    const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
-    const result = await model.generateContent(promptText);
-    const response = await result.response.text();
-
-    return NextResponse.json({ answer: response });
+    const answer = await generateReply(ChatBot, promptText)
+    return NextResponse.json({
+      answer
+    }, {
+      status: 200
+    });
   } catch (error) {
     console.error('Error:', error);
-    return NextResponse.json({ error: 'Error generating response' }, { status: 500 });
+    return NextResponse.json({
+      error:'Error generating response'
+    }, { status: 500 });
   }
 }

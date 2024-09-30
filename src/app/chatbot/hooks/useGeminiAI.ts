@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect, ChangeEvent } from 'react';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
 
 export const useGeminiAI = () => {
   const [inputValue, setInputValue] = useState<string>('');

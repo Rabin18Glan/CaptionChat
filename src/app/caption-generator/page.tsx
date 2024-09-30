@@ -1,14 +1,14 @@
 // ImageAnalyzer.tsx
 "use client";
 
+import Root from '@/layouts/Root';
 import React from "react";
-import FileUploader from "./components/FileUploader";
 import CaptionOptions from "./components/CaptionOptions";
 import CustomPrompt from "./components/CustomPrompt";
+import FileUploader from "./components/FileUploader";
 import GeneratedCaption from "./components/GeneratedCaptions";
 import useImageAnalyzer from "./hooks/useImageAnalyzer";
 import { copyToClipboard } from "./utils/copyToClipboard";
-import Root from '@/layouts/Root';
 
 const ImageAnalyzer: React.FC = () => {
   const {
