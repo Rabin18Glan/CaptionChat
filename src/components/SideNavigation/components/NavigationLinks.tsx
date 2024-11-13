@@ -14,7 +14,7 @@ export const NavigationLinks: React.FC = () => {
         <li key={index}>
           <Link
             href={nav.url}
-            className={`block p-6 hover:bg-gray-300 ${pathname === nav.url ? 'bg-gray-200' : ''}`}
+            className={`hover:text-black block p-6 hover:bg-gray-300  ${pathname === nav.url ? 'bg-gray-200 text-black' : ''}`}
           >
             {nav.name}
           </Link>

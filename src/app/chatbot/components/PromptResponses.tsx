@@ -14,7 +14,7 @@ const PromptResponses: React.FC<PromptResponsesProps> = ({
   formatResponseAsHTML,
   endOfResponsesRef,
 }) => (
-  <div className="overflow-y-auto h-[79vh]  p-2  border-gray-300 ">
+  <div className="overflow-y-auto h-[79vh]  p-2  border-gray-300 text-gray-700">
     {promptResponses.map((item, index) => (
       <div key={index} className="flex flex-col mt-3">
         <div className="self-end mb-1 p-4 bg-blue-100 rounded-bl-lg rounded-t-lg">

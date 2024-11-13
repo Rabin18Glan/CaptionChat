@@ -16,7 +16,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ inputValue, handleInputChange, ha
       onChange={handleInputChange}
       onKeyDown={handleKeyDown}
       placeholder="Ask Me Something You Want"
-      className="flex-1 p-3 border border-gray-500 rounded-l-md focus:outline-none focus:border-gray-700"
+      className="flex-1 p-3 border text-black border-gray-500 rounded-l-md focus:outline-none focus:border-gray-700"
     />
     <button
       onClick={getResponseForGivenPrompt}

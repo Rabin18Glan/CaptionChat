@@ -12,7 +12,7 @@ const PersonalitySelector: React.FC<PersonalityDropdownProps> = ({ personality, 
     <select
       value={personality}
       onChange={(e) => setPersonality(e.target.value)}
-      className="p-2 border border-blue-500 rounded-md ml-2"
+      className="p-2 border border-blue-500 rounded-md ml-2 text-gray-700"
     >
       {personalities.map((person) => (
         <option key={person.personality} value={person.personality}>

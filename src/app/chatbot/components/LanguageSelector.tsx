@@ -12,7 +12,7 @@ const LanguageSelector: React.FC<LanguageDropdownProps> = ({ language, setLangua
     <select
       value={language}
       onChange={(e) => setLanguage(e.target.value)}
-      className="p-2 border border-gray-500 rounded-md"
+      className="p-2 border border-gray-500 rounded-md text-gray-700"
     >
       {languages.map((lang) => (
         <option key={lang.value} value={lang.value}>

@@ -10,7 +10,7 @@ function SideNavigation() {
   return (
     <>
       {/* Sidebar for Medium to Large Devices */}
-      <nav className="hidden lg:flex lg:flex-col bg-gray-800 text-white lg:h-screen">
+      <nav className="hidden lg:flex lg:flex-col bg-gray-800 lg:h-screen">
         <h2 className="font-bold text-3xl p-5">Tools</h2>
         <NavigationLinks />
       </nav>
